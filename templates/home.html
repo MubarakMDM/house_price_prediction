@@ -1,3 +1,54 @@
-<h1>
-    Hellow World
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regression Predictor</title>
+</head>
+<body>
+    <h1>Regression Predictor</h1>
+    <form action="/predict" method="post">
+        <label for="CRIM">CRIM:</label>
+        <input type="number" step="0.01" name="CRIM" id="CRIM" required><br>
+
+        <label for="ZN">ZN:</label>
+        <input type="number" step="0.01" name="ZN" id="ZN" required><br>
+
+        <label for="INDUS">INDUS:</label>
+        <input type="number" step="0.01" name="INDUS" id="INDUS" required><br>
+
+        <label for="CHAS">CHAS:</label>
+        <input type="number" step="0.01" name="CHAS" id="CHAS" required><br>
+
+        <label for="NOX">NOX:</label>
+        <input type="number" step="0.01" name="NOX" id="NOX" required><br>
+
+        <label for="RM">RM:</label>
+        <input type="number" step="0.01" name="RM" id="RM" required><br>
+
+        <label for="AGE">AGE:</label>
+        <input type="number" step="0.01" name="AGE" id="AGE" required><br>
+
+        <label for="DIS">DIS:</label>
+        <input type="number" step="0.01" name="DIS" id="DIS" required><br>
+
+        <label for="RAD">RAD:</label>
+        <input type="number" step="0.01" name="RAD" id="RAD" required><br>
+
+        <label for="TAX">TAX:</label>
+        <input type="number" step="0.01" name="TAX" id="TAX" required><br>
+
+        <label for="PTRATIO">PTRATIO:</label>
+        <input type="number" step="0.01" name="PTRATIO" id="PTRATIO" required><br>
+
+        <label for="B">B:</label>
+        <input type="number" step="0.01" name="B" id="B" required><br>
+
+        <label for="LSTAT">LSTAT:</label>
+        <input type="number" step="0.01" name="LSTAT" id="LSTAT" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+    {{predictionResult}}
+</body>
+</html>

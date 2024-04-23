@@ -24,7 +24,7 @@ def predict_api():
     dataValue = request.json['data']
     print(dataValue)
     print(np.array(list(dataValue.values())).reshape(1,-1))
-    new_data = scalar.trasform(np.array(list(dataValue.values())).reshape(1,-1))
+    new_data = scalar.transform(np.array(list(dataValue.values())).reshape(1,-1))
     output = regmodel.predict(new_data)
     print(output[0])
     return jsonify(output[0])
@@ -32,9 +32,9 @@ def predict_api():
 @app.route('/predict', methods=['POST'])
 def predict():
     data =  [float(x) for x in request.form.values()]
-    final_input = scalar.trasform(np.array(data.reshape(1,-1)))
-
-
-
+    print(data)
+    new_data = scalar.transform(np.array(list(data)).reshape(1,-1))
+    output = regmodel.predict(new_data)
+    return render_template('home.html', predictionResult="The predicted value is {}".format((output[0])))  
 if __name__ == '__main__' :
     app.run(debug=True)
