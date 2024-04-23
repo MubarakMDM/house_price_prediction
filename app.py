@@ -36,5 +36,6 @@ def predict():
     new_data = scalar.transform(np.array(list(data)).reshape(1,-1))
     output = regmodel.predict(new_data)
     return render_template('home.html', predictionResult="The predicted value is {}".format((output[0])))  
+
 if __name__ == '__main__' :
     app.run(debug=True)
